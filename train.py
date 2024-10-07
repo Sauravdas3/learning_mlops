@@ -61,7 +61,7 @@ def main():
         monitor="valid/loss", patience=3, verbose=True, mode="min"
     )
 
-    wandb_logger = WandbLogger(project="learning_mlops2", entity="sauravdasdas07")
+    wandb_logger = WandbLogger(project="learning_mlops", entity="sauravdasdas07")
     trainer = pl.Trainer(
         max_epochs=1,
         logger=wandb_logger,
