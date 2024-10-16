@@ -7,11 +7,15 @@ from pytorch_lightning.callbacks import ModelCheckpoint
 from pytorch_lightning.callbacks.early_stopping import EarlyStopping
 from pytorch_lightning.loggers import WandbLogger
 import os
+import hydra
+import logging
+from omegaconf.omegaconf import OmegaConf
 
 
 from data import DataModule
 from model import ColaModel
 
+logger = logging.getLogger(__name__)
 
 class SamplesVisualisationLogger(pl.Callback):
     def __init__(self, datamodule):
@@ -44,9 +48,15 @@ class SamplesVisualisationLogger(pl.Callback):
         )
 
 
-def main():
-    cola_data = DataModule()
-    cola_model = ColaModel()
+@hydra.main(config_path="./configs", config_name="config")
+def main(cfg):
+    logger.info(OmegaConf.to_yaml(cfg, resolve=True))
+    logger.info(f"Using the model: {cfg.model.name}")
+    logger.info(f"Using the tokenizer: {cfg.model.tokenizer}")
+    cola_data = DataModule(
+        cfg.model.tokenizer, cfg.processing.batch_size, cfg.processing.max_length
+    )
+    cola_model = ColaModel(cfg.model.name)
     # Ensure the directory exists
     os.makedirs("./models", exist_ok=True)
 
@@ -63,13 +73,13 @@ def main():
 
     wandb_logger = WandbLogger(project="learning_mlops", entity="sauravdasdas07")
     trainer = pl.Trainer(
-        max_epochs=1,
+        max_epochs=cfg.training.max_epochs,
         logger=wandb_logger,
         callbacks=[checkpoint_callback, SamplesVisualisationLogger(cola_data), early_stopping_callback],
-        log_every_n_steps=10,
-        deterministic=True,
-        # limit_train_batches=0.25,
-        # limit_val_batches=0.25
+        log_every_n_steps=cfg.training.log_every_n_steps,
+        deterministic=cfg.training.deterministic,
+        limit_train_batches=cfg.training.limit_train_batches,
+        limit_val_batches=cfg.training.limit_val_batches,
     )
 
     print("Starting Training")

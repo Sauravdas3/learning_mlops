@@ -10,6 +10,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from torchmetrics import Precision, Recall
 
+import hydra
+from omegaconf import OmegaConf, DictConfig
+
 
 class ColaModel(pl.LightningModule):
     def __init__(self, model_name="google/bert_uncased_L-2_H-128_A-2", lr=3e-5):
@@ -21,13 +24,13 @@ class ColaModel(pl.LightningModule):
             model_name, num_labels = 2
         )
         self.num_classes = 2
-        self.train_accuracy_metric = torchmetrics.Accuracy(task="multiclass", num_classes=self.num_classes)
-        self.val_accuracy_metrics = torchmetrics.Accuracy(task="multiclass", num_classes=self.num_classes)
-        self.f1_metric = torchmetrics.classification.F1Score(task="multiclass", num_classes=self.num_classes)
-        self.precision_macro_metric = torchmetrics.Precision(average="macro", task="multiclass", num_classes=self.num_classes)
-        self.precision_micro_metric = torchmetrics.Precision(average="micro", task="multiclass", num_classes=self.num_classes)
-        self.recall_macro_metric = torchmetrics.Recall(average="macro", task="multiclass", num_classes=self.num_classes)
-        self.recall_micro_metric = torchmetrics.Recall(average="micro", task="multiclass", num_classes=self.num_classes)
+        self.train_accuracy_metric = torchmetrics.Accuracy()
+        self.val_accuracy_metrics = torchmetrics.Accuracy()
+        self.f1_metric = torchmetrics.classification.F1(num_classes=self.num_classes)
+        self.precision_macro_metric = torchmetrics.Precision(average="macro",  num_classes=self.num_classes)
+        self.precision_micro_metric = torchmetrics.Precision(average="micro", num_classes=self.num_classes)
+        self.recall_macro_metric = torchmetrics.Recall(average="macro", num_classes=self.num_classes)
+        self.recall_micro_metric = torchmetrics.Recall(average="micro", num_classes=self.num_classes)
 
     
     def forward(self, input_ids, attention_mask, labels=None):

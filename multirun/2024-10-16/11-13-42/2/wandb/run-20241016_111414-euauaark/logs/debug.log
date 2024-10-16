@@ -1,0 +1,61 @@
+2024-10-16 11:14:14,256 INFO    MainThread:22536 [wandb_setup.py:_flush():79] Current SDK version is 0.18.3
+2024-10-16 11:14:14,257 INFO    MainThread:22536 [wandb_setup.py:_flush():79] Configure stats pid to 22536
+2024-10-16 11:14:14,257 INFO    MainThread:22536 [wandb_setup.py:_flush():79] Loading settings from C:\Users\saura\.config\wandb\settings
+2024-10-16 11:14:14,257 INFO    MainThread:22536 [wandb_setup.py:_flush():79] Loading settings from C:\all_projects\learning_mlops\learning_mlops\learning_mlops\multirun\2024-10-16\11-13-42\0\wandb\settings
+2024-10-16 11:14:14,257 INFO    MainThread:22536 [wandb_setup.py:_flush():79] Loading settings from environment variables: {}
+2024-10-16 11:14:14,257 INFO    MainThread:22536 [wandb_setup.py:_flush():79] Applying setup settings: {'mode': None, '_disable_service': None}
+2024-10-16 11:14:14,257 WARNING MainThread:22536 [wandb_setup.py:_flush():79] Could not find program at train.py
+2024-10-16 11:14:14,257 INFO    MainThread:22536 [wandb_setup.py:_flush():79] Inferring run settings from compute environment: {'program_relpath': None, 'program': 'train.py'}
+2024-10-16 11:14:14,257 INFO    MainThread:22536 [wandb_setup.py:_flush():79] Applying login settings: {}
+2024-10-16 11:14:14,258 INFO    MainThread:22536 [wandb_init.py:_log_setup():532] Logging user logs to C:\all_projects\learning_mlops\learning_mlops\learning_mlops\multirun\2024-10-16\11-13-42\2\wandb\run-20241016_111414-euauaark\logs\debug.log
+2024-10-16 11:14:14,258 INFO    MainThread:22536 [wandb_init.py:_log_setup():533] Logging internal logs to C:\all_projects\learning_mlops\learning_mlops\learning_mlops\multirun\2024-10-16\11-13-42\2\wandb\run-20241016_111414-euauaark\logs\debug-internal.log
+2024-10-16 11:14:14,258 INFO    MainThread:22536 [wandb_init.py:init():617] calling init triggers
+2024-10-16 11:14:14,259 INFO    MainThread:22536 [wandb_init.py:init():624] wandb.init called with sweep_config: {}
+config: {}
+2024-10-16 11:14:14,259 INFO    MainThread:22536 [wandb_init.py:init():667] starting backend
+2024-10-16 11:14:14,259 INFO    MainThread:22536 [wandb_init.py:init():671] sending inform_init request
+2024-10-16 11:14:14,263 INFO    MainThread:22536 [backend.py:_multiprocessing_setup():104] multiprocessing start_methods=spawn, using: spawn
+2024-10-16 11:14:14,264 INFO    MainThread:22536 [wandb_init.py:init():684] backend started and connected
+2024-10-16 11:14:14,275 INFO    MainThread:22536 [wandb_init.py:init():779] updated telemetry
+2024-10-16 11:14:14,635 INFO    MainThread:22536 [wandb_init.py:init():812] communicating run to backend with 90.0 second timeout
+2024-10-16 11:14:15,355 ERROR   MainThread:22536 [wandb_init.py:init():838] encountered error: failed to upsert bucket: returned error 403 Forbidden: {"errors":[{"message":"permission denied","path":["upsertBucket"],"extensions":{"code":"PERMISSION_ERROR"}}],"data":{"upsertBucket":null}}
+2024-10-16 11:14:15,355 ERROR   MainThread:22536 [wandb_init.py:init():1262] error in wandb.init()
+Traceback (most recent call last):
+  File "C:\Users\saura\.conda\envs\project-setup\lib\site-packages\wandb\sdk\wandb_init.py", line 1252, in init
+    return wi.init()
+  File "C:\Users\saura\.conda\envs\project-setup\lib\site-packages\wandb\sdk\wandb_init.py", line 844, in init
+    raise error
+wandb.errors.errors.CommError: failed to upsert bucket: returned error 403 Forbidden: {"errors":[{"message":"permission denied","path":["upsertBucket"],"extensions":{"code":"PERMISSION_ERROR"}}],"data":{"upsertBucket":null}}
+2024-10-16 11:14:27,924 INFO    MainThread:22536 [wandb_settings.py:_apply_login():1970] Applying login settings: {}
+2024-10-16 11:14:27,930 INFO    MainThread:22536 [wandb_setup.py:_flush():79] Current SDK version is 0.18.3
+2024-10-16 11:14:27,931 INFO    MainThread:22536 [wandb_setup.py:_flush():79] Configure stats pid to 22536
+2024-10-16 11:14:27,931 INFO    MainThread:22536 [wandb_setup.py:_flush():79] Loading settings from C:\Users\saura\.config\wandb\settings
+2024-10-16 11:14:27,931 INFO    MainThread:22536 [wandb_setup.py:_flush():79] Loading settings from C:\all_projects\learning_mlops\learning_mlops\learning_mlops\multirun\2024-10-16\11-13-42\0\wandb\settings
+2024-10-16 11:14:27,931 INFO    MainThread:22536 [wandb_setup.py:_flush():79] Loading settings from environment variables: {}
+2024-10-16 11:14:27,931 INFO    MainThread:22536 [wandb_setup.py:_flush():79] Applying setup settings: {'mode': None, '_disable_service': None}
+2024-10-16 11:14:27,931 WARNING MainThread:22536 [wandb_setup.py:_flush():79] Could not find program at train.py
+2024-10-16 11:14:27,931 INFO    MainThread:22536 [wandb_setup.py:_flush():79] Inferring run settings from compute environment: {'program_relpath': None, 'program': 'train.py'}
+2024-10-16 11:14:27,931 INFO    MainThread:22536 [wandb_setup.py:_flush():79] Applying login settings: {}
+2024-10-16 11:14:27,932 INFO    MainThread:22536 [wandb_init.py:_log_setup():532] Logging user logs to C:\all_projects\learning_mlops\learning_mlops\learning_mlops\multirun\2024-10-16\11-13-42\3\wandb\run-20241016_111427-om9prcxm\logs\debug.log
+2024-10-16 11:14:27,932 INFO    MainThread:22536 [wandb_init.py:_log_setup():533] Logging internal logs to C:\all_projects\learning_mlops\learning_mlops\learning_mlops\multirun\2024-10-16\11-13-42\3\wandb\run-20241016_111427-om9prcxm\logs\debug-internal.log
+2024-10-16 11:14:27,932 INFO    MainThread:22536 [wandb_init.py:init():617] calling init triggers
+2024-10-16 11:14:27,932 INFO    MainThread:22536 [wandb_init.py:init():624] wandb.init called with sweep_config: {}
+config: {}
+2024-10-16 11:14:27,932 INFO    MainThread:22536 [wandb_init.py:init():667] starting backend
+2024-10-16 11:14:27,932 INFO    MainThread:22536 [wandb_init.py:init():671] sending inform_init request
+2024-10-16 11:14:27,937 INFO    MainThread:22536 [backend.py:_multiprocessing_setup():104] multiprocessing start_methods=spawn, using: spawn
+2024-10-16 11:14:27,938 INFO    MainThread:22536 [wandb_init.py:init():684] backend started and connected
+2024-10-16 11:14:27,949 INFO    MainThread:22536 [wandb_init.py:init():779] updated telemetry
+2024-10-16 11:14:28,306 INFO    MainThread:22536 [wandb_init.py:init():812] communicating run to backend with 90.0 second timeout
+2024-10-16 11:14:29,154 WARNING MsgRouterThr:22536 [router.py:message_loop():77] message_loop has been closed
+2024-10-16 11:14:29,154 ERROR   MainThread:22536 [wandb_init.py:init():838] encountered error: failed to upsert bucket: returned error 403 Forbidden: {"errors":[{"message":"permission denied","path":["upsertBucket"],"extensions":{"code":"PERMISSION_ERROR"}}],"data":{"upsertBucket":null}}
+2024-10-16 11:14:29,154 ERROR   MainThread:22536 [wandb_init.py:init():1262] error in wandb.init()
+Traceback (most recent call last):
+  File "C:\Users\saura\.conda\envs\project-setup\lib\site-packages\wandb\sdk\wandb_init.py", line 1252, in init
+    return wi.init()
+  File "C:\Users\saura\.conda\envs\project-setup\lib\site-packages\wandb\sdk\wandb_init.py", line 844, in init
+    raise error
+wandb.errors.errors.CommError: failed to upsert bucket: returned error 403 Forbidden: {"errors":[{"message":"permission denied","path":["upsertBucket"],"extensions":{"code":"PERMISSION_ERROR"}}],"data":{"upsertBucket":null}}
+2024-10-16 11:14:30,036 WARNING MsgRouterThr:22536 [router.py:message_loop():77] message_loop has been closed
+2024-10-16 11:14:30,036 WARNING MsgRouterThr:22536 [router.py:message_loop():77] message_loop has been closed
+2024-10-16 11:14:30,036 WARNING MsgRouterThr:22536 [router.py:message_loop():77] message_loop has been closed

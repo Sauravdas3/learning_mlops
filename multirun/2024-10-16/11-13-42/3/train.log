@@ -1,0 +1,17 @@
+[2024-10-16 11:14:15,682][__main__][INFO] - model:
+  name: google/bert_uncased_L-2_H-128_A-2
+  tokenizer: google/bert_uncased_L-2_H-128_A-2
+processing:
+  batch_size: 64
+  max_length: 128
+training:
+  max_epochs: 2
+  log_every_n_steps: 10
+  deterministic: true
+  limit_train_batches: 0.25
+  limit_val_batches: 0.25
+
+[2024-10-16 11:14:15,683][__main__][INFO] - Using the model: google/bert_uncased_L-2_H-128_A-2
+[2024-10-16 11:14:15,683][__main__][INFO] - Using the tokenizer: google/bert_uncased_L-2_H-128_A-2
+[2024-10-16 11:14:26,844][datasets.load][WARNING] - Using the latest cached version of the dataset since glue couldn't be found on the Hugging Face Hub
+[2024-10-16 11:14:26,845][datasets.packaged_modules.cache.cache][WARNING] - Found the latest cached dataset configuration 'cola' at C:\Users\saura\.cache\huggingface\datasets\glue\cola\0.0.0\bcdcba79d07bc864c1c254ccfcedcce55bcc9a8c (last modified on Wed Oct 16 11:14:14 2024).
